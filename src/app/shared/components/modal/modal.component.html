@@ -1,0 +1,19 @@
+<div
+  class="modal-overlay"
+  (click)="modalRef.close()"
+  >
+  <div
+    appFocusTrap
+    appFocusBack
+    class="modal-content"
+    role="dialog"
+    aria-modal="true"
+    [attr.aria-label]="config.title"
+    (click)="$event.stopPropagation()"
+    (keydown.esc)="modalRef.close()"
+  >
+    <h1 class="modal-title">{{ config.title }}</h1>
+    <ng-container *ngTemplateOutlet="config.templateRef"></ng-container>
+
+  </div>
+</div>
